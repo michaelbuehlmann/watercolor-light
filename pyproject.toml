@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "watercolor-light"
+version = "0.1.0"
+description = ""
+authors = ["Nesar Ramachandra <nramachandra@anl.gov>"]
+license = "Apache Software License 2.0"
+readme = "README.md"
+packages = [{include = "watercolor_light"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.26.4"
+scipy = "^1.14.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+matplotlib = "^3.9.0"
+pygio = {git = "https://git.cels.anl.gov/hacc/genericio.git"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
