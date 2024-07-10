@@ -11,7 +11,7 @@ packages = [{include = "watercolor_light"}]
 python = "^3.10"
 numpy = "^1.26.4"
 scipy = "^1.14.0"
-
+speclite = { git = "https://github.com/michaelbuehlmann/speclite.git", branch="update_scipy_integrate"}
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"

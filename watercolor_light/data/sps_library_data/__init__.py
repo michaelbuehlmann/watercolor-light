@@ -18,12 +18,18 @@ class SPSLibraryData:
         age_file: str = LIBRARY_AGE_FILE,
         metal_file: str = LIBRARY_METAL_FILE,
         Z_solar: np.float32 = Z_SOLAR_PADOVA,
+        correct_flux_units: bool = True,
     ):
         self._Z_solar = Z_solar
         self.flux: np.ndarray = _load_fsps_flux(flux_file)
         self.wave: np.ndarray = _load_fsps_wave(wave_file)
         self.age: np.ndarray = _load_fsps_age(age_file)
         self.metallicity: np.ndarray = _load_fsps_metallicity(metal_file, Z_solar)
+
+        if correct_flux_units:
+            # convert from 1/Hz to 1/Angstrom
+            c_aa_sec = 299792458 * 1e10
+            self.flux = self.flux * c_aa_sec / self.wave**2
 
 
 def _load_fsps_flux(flux_file) -> tuple:  # Fluxes, wavelengths
