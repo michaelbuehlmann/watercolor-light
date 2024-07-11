@@ -1,6 +1,7 @@
 import speclite.filters
 import numpy as np
 import astropy.units as u
+from typing import Union
 
 filters = {"sdss": speclite.filters.load_filters("sdss2010-*")}
 
@@ -8,7 +9,7 @@ filters = {"sdss": speclite.filters.load_filters("sdss2010-*")}
 def photometry_from_flux(
     wave: np.ndarray,
     flux: np.ndarray,
-    filter: str | speclite.filters.FilterSequence,
+    filter: Union[str,  speclite.filters.FilterSequence],
 ):
     """Calculate the photometry of a given flux in a given filter.
 
