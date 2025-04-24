@@ -8,8 +8,8 @@ readme = "README.md"
 packages = [{include = "watercolor_light"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-numpy = "^1.26.4"
+python = "^3.10"
+numpy = "^2.2.5"
 scipy = "^1.13.0"
 speclite = { git = "https://github.com/michaelbuehlmann/speclite.git", branch="update_scipy_integrate"}
 
